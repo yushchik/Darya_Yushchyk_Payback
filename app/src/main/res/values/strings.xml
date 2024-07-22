@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Darya_Yushchyk_Payback</string>
+
+    <string name="search_field">Search</string>
+    <string name="search_idle">Type your query into the search field</string>
+    <string name="search_error">There was some issue with searching,\n please try again</string>
+    <string name="search_empty_result">No results found.\n Please try searching again</string>
+
+    <string name="network_connected">Network Connected</string>
+    <string name="network_disconnected">Network Disconnected</string>
 </resources>

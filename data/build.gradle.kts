@@ -1,12 +1,15 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.library")
     id("kotlin-android")
     alias(libs.plugins.devtools)
     alias(libs.plugins.compose.compiler)
-
     id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin")
 }
 
+secrets {
+    propertiesFileName = "secrets.properties"
+}
 
 android {
     namespace = "com.example.data"
@@ -28,12 +31,21 @@ android {
             )
         }
     }
+    buildFeatures {
+        buildConfig = true
+    }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    ksp {
+
+        arg("room.schemaLocation", "$projectDir/schemas")
+        arg("room.incremental", "true")
+
     }
 }
 
@@ -42,15 +54,14 @@ dependencies {
     implementation(libs.bundles.android)
 
     implementation(libs.bundles.room)
-//    implementation(libs.room)
     implementation(libs.coreKtx)
     implementation(libs.appcompat)
 
     implementation(platform(libs.okhhtpBom))
     implementation(libs.bundles.okhhtp)
-    implementation(libs.com.google.android.material.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidJunit)
+    implementation(libs.com.google.android.material.material)
     androidTestImplementation(libs.espresso)
     implementation(libs.storage)
     implementation(libs.bundles.logging)

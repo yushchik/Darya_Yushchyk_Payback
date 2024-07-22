@@ -46,9 +46,10 @@ dependencies {
 
     implementation(libs.coreKtx)
     implementation(libs.appcompat)
-    implementation(libs.com.google.android.material.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidJunit)
+    implementation(libs.com.google.android.material.material)
+
     androidTestImplementation(libs.espresso)
     implementation(libs.bundles.hilt)
     kapt(libs.hiltCompiler)

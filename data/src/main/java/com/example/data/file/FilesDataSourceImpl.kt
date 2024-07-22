@@ -4,6 +4,7 @@ import android.content.Context
 import com.example.data.Constants.FULL_PHOTO_FOLDER_NAME
 import com.example.data.Constants.PHOTO_PREVIEW_FOLDER_NAME
 import dagger.hilt.android.qualifiers.ApplicationContext
+import logcat.logcat
 import java.io.File
 import javax.inject.Inject
 

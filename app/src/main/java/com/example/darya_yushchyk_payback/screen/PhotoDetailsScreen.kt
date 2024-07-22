@@ -137,7 +137,7 @@ fun PhotoDetailsContent(
                         .padding(horizontal = 8.dp)
                 )
             }
-            Row() {
+            Row {
                 Image(
                     painter = painterResource(id = R.drawable.ic_comment),
                     contentDescription = "",
